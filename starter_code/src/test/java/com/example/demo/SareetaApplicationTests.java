@@ -18,6 +18,7 @@ import com.example.demo.controllers.UserController;
 import com.example.demo.model.persistence.Cart;
 import com.example.demo.model.persistence.Item;
 import com.example.demo.model.persistence.User;
+import com.example.demo.model.persistence.UserOrder;
 import com.example.demo.model.requests.CreateUserRequest;
 import com.example.demo.model.requests.ModifyCartRequest;
 import com.sun.tools.sjavac.Log;
@@ -72,13 +73,11 @@ public class SareetaApplicationTests {
 	@Test
 	public void testFailedRequest() {
 		CreateUserRequest createUserRequest = failedCreatingUserRequest();
-		User newUser = userController.createUser(createUserRequest).getBody();
+		userController.createUser(createUserRequest);
 		User gettingUser = userController.findByUserName(createUserRequest.getUsername()).getBody();
 
-		assertNull(newUser);
 		assertNull(gettingUser);
-		assertEquals(null, newUser);
-		assertEquals(null, gettingUser);
+
 	}
 
 	@Test
@@ -90,38 +89,26 @@ public class SareetaApplicationTests {
 	public void testAddToCart() {
 		testCreatingUser();
 		ModifyCartRequest modifyCartRequest = modifyingCartRequest();
-
-		//login
-		// userDetailsServiceImpl.loadUserByUsername(username);
-		//authorization token
-		
-
-
 		Cart cart = cartController.addTocart(modifyCartRequest).getBody();
 		cart.setUser(user);
-		// System.out.println(cart.getId());
-		// System.out.println(cart.getTotal());
-		// System.out.println(cart.getUser());
-		// System.out.println(cart.getUser().getUsername());
-		// System.out.println(cart.getItems().get(0).getId());
 
-		Item item = cart.getItems().get(cart.getItems().size()-1);
+		Item itemInCart = cart.getItems().get(cart.getItems().size()-1);
+		Item requestedItem = itemController.getItemById(modifyCartRequest.getItemId()).getBody();
 
 		assertEquals(modifyCartRequest.getUsername(), cart.getUser().getUsername());
-		// assertEquals(modifyCartRequest.getItemId(), (cart.getItems().get(cart.getItems().size()-1).getId()));
-		assertEquals(modifyCartRequest.getItemId(), item.getId().longValue());
-		// Item item = itemController.getItemById(modifyCartRequest.getItemId());
-		// assertEquals((modifyCartRequest.getQuantity()) * ((itemController.getItemById(modifyCartRequest.getItemId())).getBody().getPrice()), cart.getTotal());
-		long expectedInDouble = modifyCartRequest.getQuantity() * item.getPrice().longValue();
-		long cartTotalInDouble = cart.getTotal().longValue();
-		assertEquals(expectedInDouble, cartTotalInDouble);
+		assertEquals(modifyCartRequest.getItemId(), itemInCart.getId().longValue());
+		
+		//testing the amount
+			Double expectedInDouble = modifyCartRequest.getQuantity() * requestedItem.getPrice().doubleValue();
+			Double cartTotalInDouble = cart.getTotal().doubleValue();
+			assertEquals(expectedInDouble, cartTotalInDouble);
 	}
 
 	@Test
 	public void testSubmittingOrder() {
-		testCreatingUser();
 		testAddToCart();
-		orderController.submit(user.getUsername());
+		UserOrder userOrder = orderController.submit(user.getUsername()).getBody();
+		assertEquals(user.getCart().getTotal(), userOrder.getTotal());
 	}
 
 

@@ -315,3 +315,71 @@ insert into user (id, cart_id, password, username) values (null, ?, ?, ?) [23505
 2021-07-19 00:09:01 WARN  SqlExceptionHelper:137 - SQL Error: 23505, SQLState: 23505
 2021-07-19 00:09:01 ERROR SqlExceptionHelper:142 - Unique index or primary key violation: "PUBLIC.UK_SB8BBOUER5WAK8VYIIY4PF2BX_INDEX_2 ON PUBLIC.USER(USERNAME) VALUES 1"; SQL statement:
 insert into user (id, cart_id, password, username) values (null, ?, ?, ?) [23505-199]
+2021-07-19 06:34:32 INFO  Version:21 - HV000001: Hibernate Validator 6.0.16.Final
+2021-07-19 06:34:34 INFO  LogHelper:31 - HHH000204: Processing PersistenceUnitInfo [
+	name: default
+	...]
+2021-07-19 06:34:34 INFO  Version:46 - HHH000412: Hibernate Core {5.3.10.Final}
+2021-07-19 06:34:34 INFO  Environment:213 - HHH000206: hibernate.properties not found
+2021-07-19 06:34:34 INFO  Version:49 - HCANN000001: Hibernate Commons Annotations {5.0.4.Final}
+2021-07-19 06:34:34 INFO  Dialect:157 - HHH000400: Using dialect: org.hibernate.dialect.H2Dialect
+2021-07-19 06:34:37 ERROR UserController:59 - issue in the password
+2021-07-19 06:34:37 INFO  QueryTranslatorFactoryInitiator:47 - HHH000397: Using ASTQueryTranslatorFactory
+2021-07-19 06:47:06 INFO  Version:21 - HV000001: Hibernate Validator 6.0.16.Final
+2021-07-19 06:47:08 INFO  LogHelper:31 - HHH000204: Processing PersistenceUnitInfo [
+	name: default
+	...]
+2021-07-19 06:47:09 INFO  Version:46 - HHH000412: Hibernate Core {5.3.10.Final}
+2021-07-19 06:47:09 INFO  Environment:213 - HHH000206: hibernate.properties not found
+2021-07-19 06:47:09 INFO  Version:49 - HCANN000001: Hibernate Commons Annotations {5.0.4.Final}
+2021-07-19 06:47:09 INFO  Dialect:157 - HHH000400: Using dialect: org.hibernate.dialect.H2Dialect
+2021-07-19 06:47:11 INFO  UserController:64 - the user is created
+2021-07-19 06:47:11 INFO  QueryTranslatorFactoryInitiator:47 - HHH000397: Using ASTQueryTranslatorFactory
+2021-07-19 07:35:42 INFO  Version:21 - HV000001: Hibernate Validator 6.0.16.Final
+2021-07-19 07:35:44 INFO  LogHelper:31 - HHH000204: Processing PersistenceUnitInfo [
+	name: default
+	...]
+2021-07-19 07:35:44 INFO  Version:46 - HHH000412: Hibernate Core {5.3.10.Final}
+2021-07-19 07:35:44 INFO  Environment:213 - HHH000206: hibernate.properties not found
+2021-07-19 07:35:44 INFO  Version:49 - HCANN000001: Hibernate Commons Annotations {5.0.4.Final}
+2021-07-19 07:35:44 INFO  Dialect:157 - HHH000400: Using dialect: org.hibernate.dialect.H2Dialect
+2021-07-19 07:35:47 INFO  UserController:64 - the user is created
+2021-07-19 07:35:47 INFO  QueryTranslatorFactoryInitiator:47 - HHH000397: Using ASTQueryTranslatorFactory
+2021-07-19 07:35:47 WARN  SqlExceptionHelper:137 - SQL Error: 23505, SQLState: 23505
+2021-07-19 07:35:47 ERROR SqlExceptionHelper:142 - Unique index or primary key violation: "PUBLIC.UK_SB8BBOUER5WAK8VYIIY4PF2BX_INDEX_2 ON PUBLIC.USER(USERNAME) VALUES 1"; SQL statement:
+insert into user (id, cart_id, password, username) values (null, ?, ?, ?) [23505-199]
+2021-07-19 07:40:27 INFO  Version:21 - HV000001: Hibernate Validator 6.0.16.Final
+2021-07-19 07:40:29 INFO  LogHelper:31 - HHH000204: Processing PersistenceUnitInfo [
+	name: default
+	...]
+2021-07-19 07:40:29 INFO  Version:46 - HHH000412: Hibernate Core {5.3.10.Final}
+2021-07-19 07:40:29 INFO  Environment:213 - HHH000206: hibernate.properties not found
+2021-07-19 07:40:29 INFO  Version:49 - HCANN000001: Hibernate Commons Annotations {5.0.4.Final}
+2021-07-19 07:40:29 INFO  Dialect:157 - HHH000400: Using dialect: org.hibernate.dialect.H2Dialect
+2021-07-19 07:40:32 INFO  UserController:64 - the user is created
+2021-07-19 07:40:32 INFO  QueryTranslatorFactoryInitiator:47 - HHH000397: Using ASTQueryTranslatorFactory
+2021-07-19 07:40:32 WARN  SqlExceptionHelper:137 - SQL Error: 23505, SQLState: 23505
+2021-07-19 07:40:32 ERROR SqlExceptionHelper:142 - Unique index or primary key violation: "PUBLIC.UK_SB8BBOUER5WAK8VYIIY4PF2BX_INDEX_2 ON PUBLIC.USER(USERNAME) VALUES 1"; SQL statement:
+insert into user (id, cart_id, password, username) values (null, ?, ?, ?) [23505-199]
+2021-07-19 07:41:07 INFO  Version:21 - HV000001: Hibernate Validator 6.0.16.Final
+2021-07-19 07:41:08 INFO  LogHelper:31 - HHH000204: Processing PersistenceUnitInfo [
+	name: default
+	...]
+2021-07-19 07:41:08 INFO  Version:46 - HHH000412: Hibernate Core {5.3.10.Final}
+2021-07-19 07:41:08 INFO  Environment:213 - HHH000206: hibernate.properties not found
+2021-07-19 07:41:09 INFO  Version:49 - HCANN000001: Hibernate Commons Annotations {5.0.4.Final}
+2021-07-19 07:41:09 INFO  Dialect:157 - HHH000400: Using dialect: org.hibernate.dialect.H2Dialect
+2021-07-19 07:41:11 INFO  UserController:64 - the user is created
+2021-07-19 07:41:11 INFO  QueryTranslatorFactoryInitiator:47 - HHH000397: Using ASTQueryTranslatorFactory
+2021-07-19 07:41:11 INFO  UserController:43 - order has been submitted
+2021-07-19 21:08:05 INFO  Version:21 - HV000001: Hibernate Validator 6.0.16.Final
+2021-07-19 21:08:08 INFO  LogHelper:31 - HHH000204: Processing PersistenceUnitInfo [
+	name: default
+	...]
+2021-07-19 21:08:08 INFO  Version:46 - HHH000412: Hibernate Core {5.3.10.Final}
+2021-07-19 21:08:08 INFO  Environment:213 - HHH000206: hibernate.properties not found
+2021-07-19 21:08:08 INFO  Version:49 - HCANN000001: Hibernate Commons Annotations {5.0.4.Final}
+2021-07-19 21:08:08 INFO  Dialect:157 - HHH000400: Using dialect: org.hibernate.dialect.H2Dialect
+2021-07-19 21:08:11 INFO  UserController:64 - the user is created
+2021-07-19 21:08:11 INFO  QueryTranslatorFactoryInitiator:47 - HHH000397: Using ASTQueryTranslatorFactory
+2021-07-19 21:08:11 INFO  UserController:43 - order has been submitted
