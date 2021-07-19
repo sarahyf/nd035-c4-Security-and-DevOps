@@ -2,7 +2,9 @@ package com.example.demo;
 
 import static org.junit.Assert.assertEquals;
 import static org.junit.Assert.assertNotNull;
+import static org.junit.Assert.assertNull;
 
+import java.math.BigDecimal;
 import java.net.URI;
 
 import javax.annotation.Generated;
@@ -14,11 +16,13 @@ import com.example.demo.controllers.ItemController;
 import com.example.demo.controllers.OrderController;
 import com.example.demo.controllers.UserController;
 import com.example.demo.model.persistence.Cart;
+import com.example.demo.model.persistence.Item;
 import com.example.demo.model.persistence.User;
 import com.example.demo.model.requests.CreateUserRequest;
 import com.example.demo.model.requests.ModifyCartRequest;
 import com.sun.tools.sjavac.Log;
 
+import org.hibernate.annotations.Tuplizer;
 import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -37,7 +41,7 @@ import org.springframework.test.context.junit4.SpringRunner;
 @SpringBootTest
 public class SareetaApplicationTests {
 
-	private static String username;
+	private static User user;
 
 	@Autowired
 	private UserController userController;
@@ -55,8 +59,8 @@ public class SareetaApplicationTests {
 	@Test
 	public void testCreatingUser() {
 		CreateUserRequest createUserRequest = creatingUserRequest();
-		username = createUserRequest.getUsername();
 		User newUser = userController.createUser(createUserRequest).getBody();
+		user = newUser;
 		User gettingUser = userController.findByUserName(createUserRequest.getUsername()).getBody();
 
 		assertNotNull(gettingUser);
@@ -67,7 +71,14 @@ public class SareetaApplicationTests {
 
 	@Test
 	public void testFailedRequest() {
+		CreateUserRequest createUserRequest = failedCreatingUserRequest();
+		User newUser = userController.createUser(createUserRequest).getBody();
+		User gettingUser = userController.findByUserName(createUserRequest.getUsername()).getBody();
 
+		assertNull(newUser);
+		assertNull(gettingUser);
+		assertEquals(null, newUser);
+		assertEquals(null, gettingUser);
 	}
 
 	@Test
@@ -87,14 +98,30 @@ public class SareetaApplicationTests {
 
 
 		Cart cart = cartController.addTocart(modifyCartRequest).getBody();
-		System.out.println(cart.getId());
-		System.out.println(cart.getTotal());
-		System.out.println(cart.getUser());
-		System.out.println(cart.getItems().get(0).getId());
+		cart.setUser(user);
+		// System.out.println(cart.getId());
+		// System.out.println(cart.getTotal());
+		// System.out.println(cart.getUser());
+		// System.out.println(cart.getUser().getUsername());
+		// System.out.println(cart.getItems().get(0).getId());
 
-		// assertEquals(modifyCartRequest.getUsername(), cart.getUser().getUsername());
+		Item item = cart.getItems().get(cart.getItems().size()-1);
+
+		assertEquals(modifyCartRequest.getUsername(), cart.getUser().getUsername());
 		// assertEquals(modifyCartRequest.getItemId(), (cart.getItems().get(cart.getItems().size()-1).getId()));
-		// assertEquals(modifyCartRequest.get, cart.getTotal());
+		assertEquals(modifyCartRequest.getItemId(), item.getId().longValue());
+		// Item item = itemController.getItemById(modifyCartRequest.getItemId());
+		// assertEquals((modifyCartRequest.getQuantity()) * ((itemController.getItemById(modifyCartRequest.getItemId())).getBody().getPrice()), cart.getTotal());
+		long expectedInDouble = modifyCartRequest.getQuantity() * item.getPrice().longValue();
+		long cartTotalInDouble = cart.getTotal().longValue();
+		assertEquals(expectedInDouble, cartTotalInDouble);
+	}
+
+	@Test
+	public void testSubmittingOrder() {
+		testCreatingUser();
+		testAddToCart();
+		orderController.submit(user.getUsername());
 	}
 
 
@@ -106,9 +133,17 @@ public class SareetaApplicationTests {
 		return createUserRequest;
 	}
 
+	private CreateUserRequest failedCreatingUserRequest() {
+		CreateUserRequest createUserRequest = new CreateUserRequest();
+		createUserRequest.setUsername("username");
+		createUserRequest.setPassword("password");
+		createUserRequest.setConfirmPassword("pass");
+		return createUserRequest;
+	}
+
 	private ModifyCartRequest modifyingCartRequest() {
 		ModifyCartRequest modifyCartRequest = new ModifyCartRequest();
-		modifyCartRequest.setUsername(username);
+		modifyCartRequest.setUsername(user.getUsername());
 		modifyCartRequest.setItemId(1);
 		modifyCartRequest.setQuantity(1);
 		return modifyCartRequest;
