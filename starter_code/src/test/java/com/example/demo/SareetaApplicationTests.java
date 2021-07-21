@@ -21,7 +21,6 @@ import com.example.demo.model.persistence.User;
 import com.example.demo.model.persistence.UserOrder;
 import com.example.demo.model.requests.CreateUserRequest;
 import com.example.demo.model.requests.ModifyCartRequest;
-import com.sun.tools.sjavac.Log;
 
 import org.hibernate.annotations.Tuplizer;
 import org.junit.Test;
