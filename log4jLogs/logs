@@ -19,3 +19,59 @@
 2021-07-10 14:40:47 INFO  UserController:67 - the user is created
 2021-07-10 14:40:50 INFO  UserController:67 - the user is created
 2021-07-10 14:40:52 INFO  UserController:67 - the user is created
+2021-07-22 16:32:32 INFO  Version:21 - HV000001: Hibernate Validator 6.0.16.Final
+2021-07-22 16:32:35 INFO  LogHelper:31 - HHH000204: Processing PersistenceUnitInfo [
+	name: default
+	...]
+2021-07-22 16:32:35 INFO  Version:46 - HHH000412: Hibernate Core {5.3.10.Final}
+2021-07-22 16:32:35 INFO  Environment:213 - HHH000206: hibernate.properties not found
+2021-07-22 16:32:36 INFO  Version:49 - HCANN000001: Hibernate Commons Annotations {5.0.4.Final}
+2021-07-22 16:32:36 INFO  Dialect:157 - HHH000400: Using dialect: org.hibernate.dialect.H2Dialect
+2021-07-22 16:32:44 INFO  UserController:63 - the user is created
+2021-07-22 16:32:58 INFO  QueryTranslatorFactoryInitiator:47 - HHH000397: Using ASTQueryTranslatorFactory
+2021-07-22 16:33:24 INFO  LogHelper:31 - HHH000204: Processing PersistenceUnitInfo [
+	name: default
+	...]
+2021-07-22 16:33:25 INFO  Dialect:157 - HHH000400: Using dialect: org.hibernate.dialect.H2Dialect
+2021-07-22 16:33:45 INFO  Version:21 - HV000001: Hibernate Validator 6.0.16.Final
+2021-07-22 16:33:48 INFO  LogHelper:31 - HHH000204: Processing PersistenceUnitInfo [
+	name: default
+	...]
+2021-07-22 16:33:48 INFO  Version:46 - HHH000412: Hibernate Core {5.3.10.Final}
+2021-07-22 16:33:48 INFO  Environment:213 - HHH000206: hibernate.properties not found
+2021-07-22 16:33:48 INFO  Version:49 - HCANN000001: Hibernate Commons Annotations {5.0.4.Final}
+2021-07-22 16:33:48 INFO  Dialect:157 - HHH000400: Using dialect: org.hibernate.dialect.H2Dialect
+2021-07-22 16:33:58 INFO  UserController:63 - the user is created
+2021-07-22 16:34:00 INFO  QueryTranslatorFactoryInitiator:47 - HHH000397: Using ASTQueryTranslatorFactory
+2021-07-22 16:34:22 INFO  UserController:63 - the user is created
+2021-07-22 16:48:44 INFO  LogHelper:31 - HHH000204: Processing PersistenceUnitInfo [
+	name: default
+	...]
+2021-07-22 16:48:44 INFO  Dialect:157 - HHH000400: Using dialect: org.hibernate.dialect.H2Dialect
+2021-07-22 16:48:50 INFO  Version:21 - HV000001: Hibernate Validator 6.0.16.Final
+2021-07-22 16:48:53 INFO  LogHelper:31 - HHH000204: Processing PersistenceUnitInfo [
+	name: default
+	...]
+2021-07-22 16:48:53 INFO  Version:46 - HHH000412: Hibernate Core {5.3.10.Final}
+2021-07-22 16:48:53 INFO  Environment:213 - HHH000206: hibernate.properties not found
+2021-07-22 16:48:53 INFO  Version:49 - HCANN000001: Hibernate Commons Annotations {5.0.4.Final}
+2021-07-22 16:48:53 INFO  Dialect:157 - HHH000400: Using dialect: org.hibernate.dialect.H2Dialect
+2021-07-22 16:49:03 INFO  QueryTranslatorFactoryInitiator:47 - HHH000397: Using ASTQueryTranslatorFactory
+2021-07-22 16:50:17 INFO  LogHelper:31 - HHH000204: Processing PersistenceUnitInfo [
+	name: default
+	...]
+2021-07-22 16:50:17 INFO  Dialect:157 - HHH000400: Using dialect: org.hibernate.dialect.H2Dialect
+2021-07-22 16:50:40 INFO  Version:21 - HV000001: Hibernate Validator 6.0.16.Final
+2021-07-22 16:50:43 INFO  LogHelper:31 - HHH000204: Processing PersistenceUnitInfo [
+	name: default
+	...]
+2021-07-22 16:50:43 INFO  Version:46 - HHH000412: Hibernate Core {5.3.10.Final}
+2021-07-22 16:50:43 INFO  Environment:213 - HHH000206: hibernate.properties not found
+2021-07-22 16:50:43 INFO  Version:49 - HCANN000001: Hibernate Commons Annotations {5.0.4.Final}
+2021-07-22 16:50:43 INFO  Dialect:157 - HHH000400: Using dialect: org.hibernate.dialect.H2Dialect
+2021-07-22 16:51:02 INFO  QueryTranslatorFactoryInitiator:47 - HHH000397: Using ASTQueryTranslatorFactory
+2021-07-22 16:51:08 INFO  UserController:63 - the user is created
+2021-07-22 16:51:47 INFO  LogHelper:31 - HHH000204: Processing PersistenceUnitInfo [
+	name: default
+	...]
+2021-07-22 16:51:47 INFO  Dialect:157 - HHH000400: Using dialect: org.hibernate.dialect.H2Dialect
