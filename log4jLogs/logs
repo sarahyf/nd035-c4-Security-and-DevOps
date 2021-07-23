@@ -75,3 +75,11 @@
 	name: default
 	...]
 2021-07-22 16:51:47 INFO  Dialect:157 - HHH000400: Using dialect: org.hibernate.dialect.H2Dialect
+2021-07-23 15:40:41 INFO  Version:21 - HV000001: Hibernate Validator 6.0.16.Final
+2021-07-23 15:40:44 INFO  LogHelper:31 - HHH000204: Processing PersistenceUnitInfo [
+	name: default
+	...]
+2021-07-23 15:40:45 INFO  Version:46 - HHH000412: Hibernate Core {5.3.10.Final}
+2021-07-23 15:40:45 INFO  Environment:213 - HHH000206: hibernate.properties not found
+2021-07-23 15:40:45 INFO  Version:49 - HCANN000001: Hibernate Commons Annotations {5.0.4.Final}
+2021-07-23 15:40:45 INFO  Dialect:157 - HHH000400: Using dialect: org.hibernate.dialect.H2Dialect
